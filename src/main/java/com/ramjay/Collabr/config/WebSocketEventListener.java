@@ -38,6 +38,7 @@ public class WebSocketEventListener {
         ChatMessage message = new ChatMessage();
         message.setContent("user has left the session!");
         message.setAuthor("Joe Shmoe");
+        message.setType(ChatMessage.MessageType.LEAVE);
         messagingTemplate.convertAndSend("/topic/public", message);
 
     }
