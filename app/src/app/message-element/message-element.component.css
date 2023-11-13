@@ -1,0 +1,19 @@
+.message {
+    font-size: 2vw;
+    box-shadow: inset;
+    padding: 2vw;
+    border: 1px solid black;
+    margin-bottom: 2px;
+}
+
+em {
+    font-size: medium;
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}

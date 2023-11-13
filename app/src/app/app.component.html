@@ -1,0 +1,43 @@
+<style>
+</style>
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <h1 class="title"><strong>Collabr</strong></h1>
+    <div class="spacer"></div>
+
+</div>
+
+<div class="content" role="main">
+    <div [ngClass]="signedIn ? 'sign-up-module hidden' : 'sign-up-module '" >
+      <h1>Sign Up</h1>
+      <form [formGroup]="signUpForm" (ngSubmit)="signIn()">
+          <input class="input-box" id="name" placeholder="Username" autocomplete="off" formControlName="name">
+          <input class="input-box" id="password" placeholder="Password" autocomplete="off" formControlName="name">
+          <input class="submit" type="submit" value="Sign In">
+      </form>
+    </div>
+
+    
+
+    <div [ngClass]="signedIn ? 'messages-module' : 'messages-module hidden'">
+      <div class="messages">
+        <div *ngFor="let message of messageList">
+          <app-message-element [message]="message"></app-message-element>
+        </div>
+      </div>
+      <form [formGroup]="sendMessageForm" (ngSubmit)="sendMessage()">
+        <input class="input-box" id="content" placeholder="content" autocomplete="off" formControlName="content">
+        <input class="submit"  type="submit">
+      </form>
+
+      <div>
+        
+      </div>
+      
+    </div>
+
+
+</div>
+
+<router-outlet></router-outlet>
